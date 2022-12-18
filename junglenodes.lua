@@ -162,12 +162,12 @@ walls.register(":livingjungle:mossstonebrick_wall", "Jungle Brick Wall", "living
 
     stairs.register_stair_and_slab(
       "livingjungle_stonebricks",
-      "livingjungle:mossstonebrick_stair",
+      "livingjungle:mossstonebrick",
       {cracky = 1, oddly_breakable_by_hand = 0, flammable = 0},
       {"livingjungle_stonebricks.png"},
       ("Jungle Brick Stair"),
       ("Jungle Brick Slab"),
-      default.node_sound_wood_defaults()
+      default.node_sound_stone_defaults()
     )
 
 minetest.register_node("livingjungle:mossstonebrick", {
@@ -201,12 +201,12 @@ walls.register(":livingjungle:mossstonebrick_wall2", "Jungle Brick Wall", "livin
 
     stairs.register_stair_and_slab(
       "livingjungle_stonebricks2",
-      "livingjungle:mossstonebrick_stair2",
+      "livingjungle:mossstonebrick",
       {cracky = 1, oddly_breakable_by_hand = 0, flammable = 0},
       {"livingjungle_stonebricks2.png"},
       ("Jungle Brick Stair"),
       ("Jungle Brick Slab"),
-      default.node_sound_wood_defaults()
+      default.node_sound_stone_defaults()
     )
 
 minetest.register_node("livingjungle:mossstonebrick2", {
@@ -240,7 +240,7 @@ walls.register(":livingjungle:mossstonebrick_wall3", "Jungle Brick Wall", "livin
 
     stairs.register_stair_and_slab(
       "livingjungle_stonebricks3",
-      "livingjungle:mossstonebrick_stair3",
+      "livingjungle:mossstonebrick",
       {cracky = 1, oddly_breakable_by_hand = 0, flammable = 0},
       {"livingjungle_stonebricks3.png"},
       ("Jungle Brick Stair"),
