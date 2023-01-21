@@ -1,3 +1,4 @@
+local S = minetest.get_translator("livingjungle")
 
 local modname = "livingjungle"
 local modpath = minetest.get_modpath(modname)
@@ -24,7 +25,7 @@ minetest.register_biome({
 -- ground nodes
 
 minetest.register_node("livingjungle:jungleground", {
-	description = ("Green Jungle Ground"),
+	description = S("Green Jungle Ground"),
 	tiles = {"livingjungle_jungleground.png", "default_dirt.png",
 		{name = "default_dirt.png^livingjungle_jungleground_side.png",
 			tileable_vertical = false}},
@@ -36,7 +37,7 @@ minetest.register_node("livingjungle:jungleground", {
 })
 
 minetest.register_node("livingjungle:leafyjungleground", {
-	description = ("Leafy Jungle Ground"),
+	description = S("Leafy Jungle Ground"),
 	tiles = {"livingjungle_rainforest_litter.png", "default_dirt.png",
 		{name = "default_dirt.png^livingjungle_rainforest_litter_side.png",
 			tileable_vertical = false}},
@@ -63,7 +64,7 @@ minetest.register_node("livingjungle:leafyjungleground", {
 --- rocks
 
 minetest.register_node("livingjungle:mossstone", {
-	description = ("Mossy Stone"),
+	description = S("Mossy Stone"),
 	tiles = {"livingjungle_mossstone.png"},
 	groups = {cracky = 3, stone = 1},
 	drop = "livingjungle:mossstone",
@@ -72,7 +73,7 @@ minetest.register_node("livingjungle:mossstone", {
 })
 
 minetest.register_node("livingjungle:mossstone2", {
-	description = ("Mossy Stone"),
+	description = S("Mossy Stone"),
 	tiles = {"livingjungle_mossstone2.png"},
 	groups = {cracky = 3, stone = 1},
 	drop = "livingjungle:mossstone2",
@@ -81,7 +82,7 @@ minetest.register_node("livingjungle:mossstone2", {
 })
 
 minetest.register_node("livingjungle:mossstone3", {
-	description = ("Mossy Stone"),
+	description = S("Mossy Stone"),
 	tiles = {"livingjungle_mossstone3.png"},
 	groups = {cracky = 3, stone = 1},
 	drop = "livingjungle:mossstone3",
@@ -157,7 +158,7 @@ offset = -0.004,
 
 --- crafting
 
-walls.register(":livingjungle:mossstonebrick_wall", "Jungle Brick Wall", "livingjungle_stonebricks.png",
+walls.register(":livingjungle:mossstonebrick_wall", S"Jungle Brick Wall", "livingjungle_stonebricks.png",
 		"livingjungle:mossstonebrick_wall", default.node_sound_stone_defaults())
 
     stairs.register_stair_and_slab(
@@ -165,13 +166,13 @@ walls.register(":livingjungle:mossstonebrick_wall", "Jungle Brick Wall", "living
       "livingjungle:mossstonebrick",
       {cracky = 1, oddly_breakable_by_hand = 0, flammable = 0},
       {"livingjungle_stonebricks.png"},
-      ("Jungle Brick Stair"),
-      ("Jungle Brick Slab"),
+      S("Jungle Brick Stair"),
+      S("Jungle Brick Slab"),
       default.node_sound_stone_defaults()
     )
 
 minetest.register_node("livingjungle:mossstonebrick", {
-	description = ("Jungle Brick"),
+	description = S("Jungle Brick"),
 	tiles = {"livingjungle_stonebricks.png"},
 	is_ground_content = false,
 	groups = {cracky = 3, stone = 2},
@@ -182,7 +183,7 @@ minetest.register_craft({
 	output = "livingjungle:mossstonebrick",
 	type = "shapeless",
 	recipe = 
-		{"livingjungle:mossstone", "livingjungle:mossstone", "livingjungle:mossstone", "livingjungle:mossstone"}
+		{"livingjungle:mossstone"}
 
 	
 })
@@ -191,12 +192,12 @@ minetest.register_craft({
 	output = "livingjungle:mossstonebrick_wall",
 	type = "shapeless",
 	recipe = 
-		{"livingjungle:mossstonebrick", "livingjungle:mossstonebrick", "livingjungle:mossstonebrick", "livingjungle:mossstonebrick", "livingjungle:mossstonebrick", "livingjungle:mossstonebrick"}
+		{"livingjungle:mossstonebrick"}
 
 	
 })
 
-walls.register(":livingjungle:mossstonebrick_wall2", "Jungle Brick Wall", "livingjungle_stonebricks2.png",
+walls.register(":livingjungle:mossstonebrick_wall2", S"Jungle Brick Wall", "livingjungle_stonebricks2.png",
 		"livingjungle:mossstonebrick_wall2", default.node_sound_stone_defaults())
 
     stairs.register_stair_and_slab(
@@ -204,13 +205,13 @@ walls.register(":livingjungle:mossstonebrick_wall2", "Jungle Brick Wall", "livin
       "livingjungle:mossstonebrick",
       {cracky = 1, oddly_breakable_by_hand = 0, flammable = 0},
       {"livingjungle_stonebricks2.png"},
-      ("Jungle Brick Stair"),
-      ("Jungle Brick Slab"),
+      S("Jungle Brick Stair"),
+      S("Jungle Brick Slab"),
       default.node_sound_stone_defaults()
     )
 
 minetest.register_node("livingjungle:mossstonebrick2", {
-	description = ("Jungle Brick"),
+	description = S("Jungle Brick"),
 	tiles = {"livingjungle_stonebricks2.png"},
 	is_ground_content = false,
 	groups = {cracky = 3, stone = 2},
@@ -221,7 +222,7 @@ minetest.register_craft({
 	output = "livingjungle:mossstonebrick2",
 	type = "shapeless",
 	recipe = 
-		{"livingjungle:mossstone2", "livingjungle:mossstone2", "livingjungle:mossstone2", "livingjungle:mossstone2"}
+		{"livingjungle:mossstone2"}
 
 	
 })
@@ -230,12 +231,12 @@ minetest.register_craft({
 	output = "livingjungle:mossstonebrick_wall2",
 	type = "shapeless",
 	recipe = 
-		{"livingjungle:mossstonebrick2", "livingjungle:mossstonebrick2", "livingjungle:mossstonebrick2", "livingjungle:mossstonebrick2", "livingjungle:mossstonebrick2", "livingjungle:mossstonebrick2"}
+		{"livingjungle:mossstonebrick2"}
 
 	
 })
 
-walls.register(":livingjungle:mossstonebrick_wall3", "Jungle Brick Wall", "livingjungle_stonebricks3.png",
+walls.register(":livingjungle:mossstonebrick_wall3", S"Jungle Brick Wall", "livingjungle_stonebricks3.png",
 		"livingjungle:mossstonebrick_wall3", default.node_sound_stone_defaults())
 
     stairs.register_stair_and_slab(
@@ -243,13 +244,13 @@ walls.register(":livingjungle:mossstonebrick_wall3", "Jungle Brick Wall", "livin
       "livingjungle:mossstonebrick",
       {cracky = 1, oddly_breakable_by_hand = 0, flammable = 0},
       {"livingjungle_stonebricks3.png"},
-      ("Jungle Brick Stair"),
-      ("Jungle Brick Slab"),
+      S("Jungle Brick Stair"),
+      S("Jungle Brick Slab"),
       default.node_sound_wood_defaults()
     )
 
 minetest.register_node("livingjungle:mossstonebrick3", {
-	description = ("Jungle Brick"),
+	description = S("Jungle Brick"),
 	tiles = {"livingjungle_stonebricks3.png"},
 	is_ground_content = false,
 	groups = {cracky = 3, stone = 2},
@@ -260,7 +261,7 @@ minetest.register_craft({
 	output = "livingjungle:mossstonebrick3",
 	type = "shapeless",
 	recipe = 
-		{"livingjungle:mossstone3", "livingjungle:mossstone3", "livingjungle:mossstone3", "livingjungle:mossstone3"}
+		{"livingjungle:mossstone3"}
 
 	
 })
@@ -269,7 +270,7 @@ minetest.register_craft({
 	output = "livingjungle:mossstonebrick_wall3",
 	type = "shapeless",
 	recipe = 
-		{"livingjungle:mossstonebrick3", "livingjungle:mossstonebrick3", "livingjungle:mossstonebrick3", "livingjungle:mossstonebrick3", "livingjungle:mossstonebrick3", "livingjungle:mossstonebrick3"}
+		{"livingjungle:mossstonebrick3"}
 
 	
 })

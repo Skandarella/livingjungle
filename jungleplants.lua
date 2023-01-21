@@ -1,3 +1,5 @@
+local S = minetest.get_translator("livingjungle")
+
 local modname = "livingjungle"
 local modpath = minetest.get_modpath(modname)
 local mg_name = minetest.get_mapgen_setting("mg_name")
@@ -16,7 +18,7 @@ local mg_name = minetest.get_mapgen_setting("mg_name")
 	})
 
 minetest.register_node("livingjungle:grass1", {
-	    description = "Jungle Bushplant",
+	    description = S"Jungle Bushplant",
 	    drawtype = "plantlike",
 	    waving = 1,
 	    visual_scale = 2.0,
@@ -47,7 +49,7 @@ minetest.register_node("livingjungle:grass1", {
 	})
 
 minetest.register_node("livingjungle:grass2", {
-	    description = "Jungle Fern",
+	    description = S"Jungle Fern",
 	    drawtype = "plantlike",
 	    waving = 1,
 	    visual_scale = 2.0,
@@ -69,7 +71,7 @@ minetest.register_node("livingjungle:grass2", {
 --- decor plants
 
 minetest.register_node("livingjungle:alocasia", {
-	    description = "Alocasia Bush",
+	    description = S"Alocasia Bush",
 	    drawtype = "plantlike",
 	    waving = 1,
 	    visual_scale = 2.0,
@@ -107,7 +109,7 @@ minetest.register_node("livingjungle:alocasia", {
 	})
 
 minetest.register_node("livingjungle:flamingoflower", {
-	    description = "Flamingo Flower",
+	    description = S"Flamingo Flower",
 	    drawtype = "plantlike",
 	    waving = 1,
 	    visual_scale = 2.0,
@@ -146,7 +148,7 @@ minetest.register_node("livingjungle:flamingoflower", {
 
 
 minetest.register_node("livingjungle:stinkflower_core", {
-	description = ("Stinkflower"),
+	description = S("Stinkflower"),
 	tiles = {
 		"livingjungle_stinkflower_middle.png",
 		"livingjungle_stinkflower_middle.png",
@@ -159,7 +161,7 @@ minetest.register_node("livingjungle:stinkflower_core", {
 })
 
 minetest.register_node("livingjungle:stinkflower_leaf", {
-	description = ("Stinkflower Leaf"),
+	description = S("Stinkflower Leaf"),
 	tiles = {
 		"livingjungle_stinkflower_side.png",
 		"livingjungle_stinkflower_side.png",
@@ -208,7 +210,7 @@ end
 
 --  samauma trunk
 minetest.register_node("livingjungle:samauma_trunk", {
-	description = ("Samauma Trunk"),
+	description = S("Samauma Trunk"),
 	tiles = {
 		"livingjungle_samauma_trunk_top.png",
 		"livingjungle_samauma_trunk_top.png",
@@ -222,7 +224,7 @@ minetest.register_node("livingjungle:samauma_trunk", {
 
 -- paleo samauma wood
 minetest.register_node("livingjungle:samauma_wood", {
-	description = ("Samauma Wood"),
+	description = S("Samauma Wood"),
 	tiles = {"livingjungle_samauma_wood.png"},
 	is_ground_content = false,
 	groups = {wood = 1, choppy = 2, oddly_breakable_by_hand = 1, flammable = 3},
@@ -235,7 +237,7 @@ minetest.register_craft({
 })
 
 minetest.register_node("livingjungle:samauma_leaves", {
-  description = ("Samauma Leaves"),
+  description = S("Samauma Leaves"),
   drawtype = "allfaces_optional",
   waving = 1,
   visual_scale = 1.0,
@@ -243,7 +245,7 @@ minetest.register_node("livingjungle:samauma_leaves", {
   special_tiles = {"livingjungle_samauma_leaves.png"},
   paramtype = "light",
   is_ground_content = false,
-  groups = {snappy = 3, leafdecay = 3, flammable = 2, leaves = 1},
+  groups = {snappy = 3, leafdecay = 3, flammable = 2, leaves = 1, winleafdecay = 3},
   drop = {
     max_items = 1,
     items = {
@@ -265,7 +267,7 @@ minetest.register_node("livingjungle:samauma_leaves", {
 })
 
 minetest.register_node("livingjungle:samauma_sapling", {
-  description = ("Samauma Sapling"),
+  description = S("Samauma Sapling"),
   drawtype = "plantlike",
   tiles = {"livingjungle_samauma_sapling.png"},
   inventory_image = "livingjungle_samauma_sapling.png",
@@ -305,8 +307,8 @@ minetest.register_node("livingjungle:samauma_sapling", {
       "livingjungle:samauma_wood",
       {choppy = 2, oddly_breakable_by_hand = 1, flammable = 3},
       {"livingjungle_samauma_wood.png"},
-      ("Samauma Stair"),
-      ("Samauma Slab"),
+      S("Samauma Stair"),
+      S("Samauma Slab"),
       default.node_sound_wood_defaults()
     )
 
@@ -315,15 +317,15 @@ minetest.register_node("livingjungle:samauma_sapling", {
       "livingjungle:samauma_trunk",
       {choppy = 2, oddly_breakable_by_hand = 1, flammable = 3},
       {"livingjungle_samauma_trunk_top.png", "livingjungle_samauma_trunk_top.png", "livingjungle_samauma_trunk.png"},
-      ("Samauma Trunk Stair"),
-      ("Samauma Trunk Slab"),
+      S("Samauma Trunk Stair"),
+      S("Samauma Trunk Slab"),
       default.node_sound_wood_defaults()
     )
 
   doors.register_fencegate(
     "livingjungle:gate_samauma_wood",
     {
-      description = ("Samauma Wood Fence Gate"),
+      description = S("Samauma Wood Fence Gate"),
       texture = "livingjungle_samauma_wood.png",
       material = "livingjungle:samauma_wood",
       groups = {choppy = 3, oddly_breakable_by_hand = 2, flammable = 3},
@@ -335,7 +337,7 @@ minetest.register_node("livingjungle:samauma_sapling", {
 default.register_fence(
   "livingjungle:fence_samauma_wood",
   {
-    description = ("Samauma Fence"),
+    description = S("Samauma Fence"),
     texture = "livingjungle_samauma_fencewood.png",
     inventory_image = "default_fence_overlay.png^livingjungle_samauma_wood.png^default_fence_overlay.png^[makealpha:255,126,126",
     wield_image = "default_fence_overlay.png^livingjungle_samauma_wood.png^default_fence_overlay.png^[makealpha:255,126,126",
@@ -348,7 +350,7 @@ default.register_fence(
 default.register_fence_rail(
   "livingjungle:fence_rail_samauma_wood",
   {
-    description = ("Samauma Fence Rail"),
+    description = S("Samauma Fence Rail"),
     texture = "livingjungle_samauma_fencewood.png",
     inventory_image = "default_fence_rail_overlay.png^livingjungle_samauma_wood.png^" ..
       "default_fence_rail_overlay.png^[makealpha:255,126,126",
@@ -446,7 +448,7 @@ minetest.register_decoration({
 
 
 minetest.register_node("livingjungle:lianabranch", {
-	description = ("Liana Branch"),
+	description = S("Liana Branch"),
 	drawtype = "plantlike",
 	waving = 1,
 	tiles = {"livingjungle_liana_branch.png"},
@@ -454,13 +456,13 @@ minetest.register_node("livingjungle:lianabranch", {
 	wield_image = "livingjungle_liana_branch.png",
 	paramtype = "light",
 	sunlight_propagates = true,
-
+	climbable = true,
 	walkable = false,
 	selection_box = {
 		type = "fixed",
 		fixed = {-6 / 16, -0.5, -6 / 16, 6 / 16, 0.5, 6 / 16},
 	},
-	groups = {snappy = 3, flammable = 2},
+	groups = {snappy = 3, flammable = 2, winleafdecay = 3},
 	sounds = default.node_sound_leaves_defaults(),
 
 	after_dig_node = function(pos, node, metadata, digger)
@@ -469,7 +471,7 @@ minetest.register_node("livingjungle:lianabranch", {
 })
 
 minetest.register_node("livingjungle:lianabranch3", {
-	description = ("Liana Branch"),
+	description = S("Liana Branch"),
 	drawtype = "raillike",
 	waving = 1,
 	tiles = {"livingjungle_liana_branch3.png"},
@@ -477,13 +479,13 @@ minetest.register_node("livingjungle:lianabranch3", {
 	wield_image = "livingjungle_liana_branch3.png",
 	paramtype = "light",
 	sunlight_propagates = true,
-
+	climbable = true,
 	walkable = false,
 	selection_box = {
 		type = "fixed",
 		fixed = {-6 / 16, -0.5, -6 / 16, 6 / 16, 0.5, 6 / 16},
 	},
-	groups = {snappy = 3, flammable = 2},
+	groups = {snappy = 3, flammable = 2, winleafdecay = 3},
 	sounds = default.node_sound_leaves_defaults(),
 
 	after_dig_node = function(pos, node, metadata, digger)
@@ -492,7 +494,7 @@ minetest.register_node("livingjungle:lianabranch3", {
 })
 
 minetest.register_node("livingjungle:lianaleaves", {
-	description = ("Liana Leaves"),
+	description = S("Liana Leaves"),
 	drawtype = "plantlike",
 	waving = 1,
 	tiles = {"livingjungle_liana_leaves.png"},
@@ -500,13 +502,13 @@ minetest.register_node("livingjungle:lianaleaves", {
 	wield_image = "livingjungle_liana_leaves.png",
 	paramtype = "light",
 	sunlight_propagates = true,
-
+	climbable = true,
 	walkable = false,
 	selection_box = {
 		type = "fixed",
 		fixed = {-6 / 16, -0.5, -6 / 16, 6 / 16, 0.5, 6 / 16},
 	},
-	groups = {snappy = 3, flammable = 2},
+	groups = {snappy = 3, flammable = 2, winleafdecay = 3},
 	sounds = default.node_sound_leaves_defaults(),
 
 	after_dig_node = function(pos, node, metadata, digger)
@@ -514,8 +516,11 @@ minetest.register_node("livingjungle:lianaleaves", {
 	end,
 })
 
+	
+
+
 minetest.register_node("livingjungle:liana_stem", {
-	description = ("Liana Stem"),
+	description = S("Liana Stem"),
 	tiles = {
 		"livingjungle_liana_stem.png",
 		"livingjungle_liana_stem.png",
@@ -530,7 +535,7 @@ minetest.register_node("livingjungle:liana_stem", {
 --- mangroves
 
 minetest.register_node("livingjungle:mangrove_root", {
-	description = ("Mangrove Root"),
+	description = S("Mangrove Root"),
 	drawtype = "plantlike_rooted",
 	waving = 0,
 	paramtype = "light",
@@ -561,7 +566,7 @@ minetest.register_node("livingjungle:mangrove_root", {
 })
 
 minetest.register_node("livingjungle:mangrove_root2", {
-	description = ("Mangrove Air Roots"),
+	description = S("Mangrove Air Roots"),
 	drawtype = "plantlike",
 	waving = 0,
 	tiles = {"livingjungle_mangrove_root.png"},
@@ -584,7 +589,7 @@ minetest.register_node("livingjungle:mangrove_root2", {
 })
 
 minetest.register_node("livingjungle:mangrove_stem", {
-	description = ("Mangrove Stem"),
+	description = S("Mangrove Stem"),
 	tiles = {
 		"livingjungle_mangrove_stem.png",
 		"livingjungle_mangrove_stem.png",
@@ -597,7 +602,7 @@ minetest.register_node("livingjungle:mangrove_stem", {
 })
 
 minetest.register_node("livingjungle:mangrove_leaves", {
-  description = ("Mangrove Leaves"),
+  description = S("Mangrove Leaves"),
   drawtype = "allfaces_optional",
   waving = 1,
   visual_scale = 1.0,
@@ -605,7 +610,7 @@ minetest.register_node("livingjungle:mangrove_leaves", {
   special_tiles = {"livingjungle_mangrove_leaves.png"},
   paramtype = "light",
   is_ground_content = false,
-  groups = {snappy = 3, leafdecay = 3, flammable = 2, leaves = 1},
+  groups = {snappy = 3, leafdecay = 3, flammable = 2, leaves = 1, winleafdecay = 3},
   drop = {
     },
   sounds = default.node_sound_leaves_defaults(),

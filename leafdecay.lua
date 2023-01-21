@@ -1,8 +1,8 @@
 
 default.register_leafdecay({
 	trunks = {"livingjungle:samauma_trunk"},
-	leaves = {"livingjungle:samauma_leaves"},
-	radius = 12
+	leaves = {"livingjungle:samauma_leaves", "livingjungle:lianaleaves", "livingjungle:lianabranch", "livingjungle:lianabranch3"},
+	radius = 9
 })
 
 default.register_leafdecay({
