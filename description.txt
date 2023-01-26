@@ -1,1 +1,0 @@
-adds a new type of jungle biome to minetest game.
