@@ -18,23 +18,9 @@ if livingjungle.settings.clear_ores then
 	minetest.clear_registered_ores()
 end
 
-local modname = "livingjungle"
-local modpath = minetest.get_modpath(modname)
-local mg_name = minetest.get_mapgen_setting("mg_name")
-
--- Load support for intllib.
 local path = minetest.get_modpath(minetest.get_current_modname()) .. "/"
 
-local S = minetest.get_translator and minetest.get_translator("livingjungle") or
-		dofile(path .. "intllib.lua")
-
-
-
 -- plants
-dofile(path .. "junglenodes.lua") -- 
-dofile(path .. "jungleplants.lua") -- 
-dofile(path .. "leafdecay.lua") -- 
-
-
-
-print (S("[MOD] Jungle Plants loaded"))
+dofile(path .. "junglenodes.lua")
+dofile(path .. "jungleplants.lua")
+dofile(path .. "leafdecay.lua")
