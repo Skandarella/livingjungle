@@ -155,7 +155,7 @@ minetest.register_node("livingjungle:stinkflower_core", {
 		"livingjungle_stinkflower_middle.png"
 	},
 	groups = {snappy = 3, flower = 1, flora = 1, attached_node = 1, flammable = 1, beautiflowers = 1},
-	sounds = mod_def and default.node_sound_leaves_defaults(),
+	sounds = default.node_sound_leaves_defaults(),
 	paramtype2 = "facedir",
 	on_place = minetest.rotate_node,
 })
@@ -168,7 +168,7 @@ minetest.register_node("livingjungle:stinkflower_leaf", {
 		"livingjungle_stinkflower_side.png"
 	},
 	groups = {snappy = 3, flower = 1, flora = 1, attached_node = 1, flammable = 1, beautiflowers = 1},
-	sounds = mod_def and default.node_sound_leaves_defaults(),
+	sounds = default.node_sound_leaves_defaults(),
 	paramtype2 = "facedir",
 	on_place = minetest.rotate_node,
 })
@@ -516,7 +516,7 @@ minetest.register_node("livingjungle:lianaleaves", {
 	end,
 })
 
-	
+
 
 
 minetest.register_node("livingjungle:liana_stem", {
@@ -557,8 +557,6 @@ minetest.register_node("livingjungle:mangrove_root", {
 		dig = {name = "default_dig_snappy", gain = 0.2},
 		dug = {name = "default_grass_footstep", gain = 0.25},
 	}),
-
-	on_place = coral_on_place,
 
 	after_destruct  = function(pos, oldnode)
 		minetest.set_node(pos, {name = "default:sand"})
