@@ -155,7 +155,6 @@ minetest.register_node("livingjungle:stinkflower_core", {
 		"livingjungle_stinkflower_middle.png"
 	},
 	groups = {snappy = 3, flower = 1, flora = 1, attached_node = 1, flammable = 1, beautiflowers = 1},
-	sounds = mod_def and default.node_sound_leaves_defaults(),
 	paramtype2 = "facedir",
 	on_place = minetest.rotate_node,
 })
@@ -168,7 +167,6 @@ minetest.register_node("livingjungle:stinkflower_leaf", {
 		"livingjungle_stinkflower_side.png"
 	},
 	groups = {snappy = 3, flower = 1, flora = 1, attached_node = 1, flammable = 1, beautiflowers = 1},
-	sounds = mod_def and default.node_sound_leaves_defaults(),
 	paramtype2 = "facedir",
 	on_place = minetest.rotate_node,
 })
@@ -206,6 +204,12 @@ local function grow_new_samauma_tree(pos)
 minetest.remove_node(pos)
 	minetest.place_schematic({x = pos.x - 13, y = pos.y - 0, z = pos.z - 13}, modpath.."/schematics/samauma_tree.mts", "0", nil, false)
 
+end
+
+if minetest.get_modpath("bonemeal") then
+bonemeal:add_sapling({
+	{"livingjungle:samauma_sapling", grow_new_samauma_tree, "soil"},
+})
 end
 
 --  samauma trunk
@@ -558,7 +562,6 @@ minetest.register_node("livingjungle:mangrove_root", {
 		dug = {name = "default_grass_footstep", gain = 0.25},
 	}),
 
-	on_place = coral_on_place,
 
 	after_destruct  = function(pos, oldnode)
 		minetest.set_node(pos, {name = "default:sand"})
@@ -709,3 +712,16 @@ minetest.register_decoration({
     flags = "force_placement",
 	rotation = "random",
 })
+
+if minetest.get_modpath("bonemeal") then
+	bonemeal:add_deco({
+		{"livingjungle:jungleground", {"livingjungle:grass1", "livingjungle:grass2", "livingjungle:alocasia", "livingjungle:flamingoflower"}, {}}
+	})
+end
+
+if minetest.get_modpath("bonemeal") then
+	bonemeal:add_deco({
+		{"livingjungle:leafyjungleground", {"livingjungle:grass1", "livingjungle:grass2", "livingjungle:alocasia", "livingjungle:flamingoflower"}, {}}
+	})
+end
+
